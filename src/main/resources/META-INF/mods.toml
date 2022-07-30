@@ -1,0 +1,29 @@
+modLoader = "javafml"
+loaderVersion = "[39,)"
+license = "MIT License"
+issueTrackerURL = "https://github.com/darkorg69/globalblockhardness/issues"
+
+[[mods]]
+modId = "globalblockhardness"
+version = "1.18-1.0.0"
+displayName = "GlobalBlockHardness"
+#updateJSONURL=""
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/globalblockhardness"
+logoFile = "globalblockhardness.png"
+credits = "Thanks for this mod goes to Java and the Forge Team"
+authors = "Darkorg"
+description = '''This mod makes breaking blocks harder.'''
+
+[[dependencies.globalblockhardness]]
+modId = "forge"
+mandatory = true
+versionRange = "[39,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.globalblockhardness]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18,1.19)"
+ordering = "NONE"
+side = "BOTH"
