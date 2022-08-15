@@ -1,8 +1,8 @@
 {
-    "pack": {
-        "description": "GlobalBlockHardness Mod Resources",
-        "pack_format": 9,
-        "forge:resource_pack_format": 8,
-        "forge:data_pack_format": 9
-    }
+  "pack": {
+    "description": "Global Block Hardness Mod Resources",
+    "pack_format": 9,
+    "forge:resource_pack_format": 9,
+    "forge:data_pack_format": 10
+  }
 }
