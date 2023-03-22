@@ -1,31 +1,45 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
     }
 }
-
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 version = "${minecraft_version}-${mod_version}"
 group = "${mod_author}.${modId}"
 archivesBaseName = modId
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 minecraft {
-    mappings channel: 'snapshot', version: mappings_version
+    mappings channel: 'parchment', version: mappings_version
 
     runs {
         client {
             workingDirectory project.file('run')
+
+            mods {
+                modId {
+                    source sourceSets.main
+                }
+            }
         }
 
         server {
             workingDirectory project.file('run')
+
+            mods {
+                modId {
+                    source sourceSets.main
+                }
+            }
         }
     }
 }
@@ -51,5 +65,5 @@ jar {
 jar.finalizedBy('reobfJar')
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = "UTF-8"
+    options.encoding = 'UTF-8'
 }

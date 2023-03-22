@@ -1,6 +1,6 @@
 {
-    "pack": {
-        "description": "Global Block Hardness Mod Resources",
-        "pack_format": 3
-    }
+  "pack": {
+    "description": "Global Block Hardness Mod Resources",
+    "pack_format": 6
+  }
 }
