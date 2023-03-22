@@ -1,0 +1,13 @@
+[
+{
+  "modid": "globalblockhardness",
+  "name": "Global Block Hardness",
+  "description": "This mod makes breaking blocks harder or easier.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/global-block-hardness",
+  "authorList": ["Darkorg"],
+  "credits": "Thanks for this mod goes to Java and the Forge team.",
+  "logoFile": "globalblockhardness.png"
+}
+]

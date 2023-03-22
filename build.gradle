@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+
+version = "${minecraft_version}-${mod_version}"
+group = "${mod_author}.${modId}"
+archivesBaseName = modId
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+minecraft {
+    mappings channel: 'snapshot', version: mappings_version
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+        }
+
+        server {
+            workingDirectory project.file('run')
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+}
+
+jar {
+    manifest {
+        attributes(["Specification-Title"     : mod_displayName,
+                    "Specification-Vendor"    : mod_author,
+                    "Specification-Version"   : "${minecraft_version}-${mod_version}",
+                    "Implementation-Title"    : project.name,
+                    "Implementation-Version"  : "${minecraft_version}-${mod_version}",
+                    "Implementation-Vendor"   : mod_author,
+                    "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
