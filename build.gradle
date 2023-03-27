@@ -16,7 +16,7 @@ version = "${minecraft_version}-${mod_version}"
 group = "${mod_author}.${modId}"
 archivesBaseName = modId
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
     mappings channel: 'parchment', version: mappings_version

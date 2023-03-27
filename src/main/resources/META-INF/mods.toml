@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[25,)"
+loaderVersion = "[38,)"
 license = "MIT License"
 issueTrackerURL = "https://github.com/darkorg69/global-block-hardness/issues"
 
