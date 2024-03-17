@@ -50,6 +50,7 @@ dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    runtimeOnly("fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:${fcap_version}")
 }
 
 // NeoGradle compiles the game, but we don't want to add our common code to the game's code
